@@ -1,0 +1,178 @@
+
+/* Animation Styles */
+
+/* Reveal Text Animation */
+.reveal-text {
+  opacity: 0;
+  animation: revealText 1s forwards;
+  animation-delay: calc(var(--i, 0) * 0.2s);
+}
+
+@keyframes revealText {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ... keep existing code (hero element animations) */
+
+/* Scroll Animation */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover Animations */
+.skill-card i {
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover i {
+  transform: scale(1.2);
+}
+
+.project-card .project-img {
+  overflow: hidden;
+}
+
+.project-card .project-img img {
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img img {
+  transform: scale(1.1);
+}
+
+/* Section Title Animation */
+.section-title h2 {
+  position: relative;
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  width: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transform: translateX(-50%);
+  transition: width 0.5s ease;
+  border-radius: 2px;
+}
+
+.section-title:hover h2::after {
+  width: 60px;
+}
+
+/* ... keep existing code (skill progress animation, pulse animation) */
+
+/* Timeline Items Animation */
+.timeline-item {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.8s ease;
+}
+
+.timeline-item.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Ensure education section timeline is visible even without JS */
+#education .timeline-item {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Form Input Focus Animation */
+.form-group input,
+.form-group textarea {
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(106, 99, 255, 0.2);
+}
+
+/* Social Link Hover Animation */
+.social-links a {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(106, 99, 255, 0.3);
+}
+
+/* Navbar scroll animation */
+@keyframes navBackgroundFade {
+  from {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  to {
+    background-color: var(--bg-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.navbar-scroll {
+  animation: navBackgroundFade 0.3s forwards;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--bg-color) !important;
+}
+
+/* White shadow effect for navbar when scrolled */
+.white-shadow {
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.15) !important;
+}
+
+body.dark-mode .white-shadow {
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1) !important;
+}
+
+body.light-mode .white-shadow {
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Mobile navigation animation */
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
